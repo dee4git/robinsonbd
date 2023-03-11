@@ -14,6 +14,9 @@ class Category(models.Model):
     answer_3 = models.CharField(default='---', max_length=1000, null=False, blank=False)
     photo = models.ImageField(upload_to='media/category-picture', null=True, blank=True)
 
+    def __str__(self):
+        return self.name
+
 
 class Product(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
@@ -23,14 +26,23 @@ class Product(models.Model):
     use_case = models.CharField(max_length=100, default='Product Name', null=False, blank=False)
     visibility = models.BooleanField(default=True)
 
+    def __str__(self):
+        return self.name
+
 
 class ProductCertification(models.Model):
     product = models.ForeignKey(Category, on_delete=models.CASCADE)
     serial_number = models.IntegerField(unique=True)
     photo = models.ImageField(upload_to='media/product-certifications')
 
+    def __str__(self):
+        return self.serial_number
+
 
 class ProductHowToUse(models.Model):
     product = models.ForeignKey(Category, on_delete=models.CASCADE)
     step_number = models.IntegerField(unique=True)
     photo = models.ImageField(upload_to='media/product-how-to-use')
+
+    def __str__(self):
+        return self.step_number
