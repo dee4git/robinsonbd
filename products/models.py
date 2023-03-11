@@ -4,14 +4,15 @@ from django.db import models
 # Create your models here.
 class Category(models.Model):
     serial_number = models.IntegerField(unique=True)
-    name = models.CharField(default='Category Name', max_length=100, null=False, blank=False)
-    description = models.CharField(default='category description', max_length=100, null=False, blank=False)
-    question_1 = models.CharField(default='---', max_length=100, null=False, blank=False)
-    answer_1 = models.CharField(default='---', max_length=100, null=False, blank=False)
-    question_2 = models.CharField(default='---', max_length=100, null=False, blank=False)
-    answer_2 = models.CharField(default='---', max_length=100, null=False, blank=False)
-    question_3 = models.CharField(default='---', max_length=100, null=False, blank=False)
-    answer_3 = models.CharField(default='---', max_length=100, null=False, blank=False)
+    name = models.CharField(default='Category Name', max_length=1000, null=False, blank=False)
+    description = models.CharField(default='category description', max_length=1000, null=False, blank=False)
+    question_1 = models.CharField(default='---', max_length=1000, null=False, blank=False)
+    answer_1 = models.CharField(default='---', max_length=1000, null=False, blank=False)
+    question_2 = models.CharField(default='---', max_length=1000, null=False, blank=False)
+    answer_2 = models.CharField(default='---', max_length=1000, null=False, blank=False)
+    question_3 = models.CharField(default='---', max_length=1000, null=False, blank=False)
+    answer_3 = models.CharField(default='---', max_length=1000, null=False, blank=False)
+    photo = models.ImageField(upload_to='media/category-picture', null=True, blank=True)
 
 
 class Product(models.Model):
