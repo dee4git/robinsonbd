@@ -1,0 +1,12 @@
+node_modules
+.env
+
+migrations/**
+**/migrations
+.idea
+venv/**
+__pycache__/**
+migrations
+**/__pycache__
+*.pyc
+*.pyc
