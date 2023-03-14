@@ -26,6 +26,7 @@ class Product(models.Model):
     use_case = models.CharField(max_length=1000, default='use case', null=False, blank=False)
     dose = models.CharField(max_length=1000, default='dose', null=False, blank=False)
     show_at_homepage = models.BooleanField(default=True)
+    photo = models.ImageField(upload_to='media/product',null=True, blank=True)
     visibility = models.BooleanField(default=True)
 
     def __str__(self):
@@ -35,19 +36,20 @@ class Product(models.Model):
 class CategoryCertification(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     serial_number = models.IntegerField(unique=True)
-    photo = models.ImageField(upload_to='media/product-certifications')
+    photo = models.ImageField(upload_to='media/category-certifications')
 
     def __str__(self):
-        return self.serial_number
+        return str(self.serial_number)
 
 
 class CategoryFeatures(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     serial_number = models.IntegerField(unique=True)
-    photo = models.ImageField(upload_to='media/product-certifications')
+    caption = models.CharField(max_length=1000, default='caption', null=False, blank=False)
+    photo = models.ImageField(upload_to='media/category-features', null=False, blank=False)
 
     def __str__(self):
-        return self.serial_number
+        return str(self.serial_number) + " -> " + self.caption
 
 
 class CategoryHowToUse(models.Model):
@@ -56,4 +58,4 @@ class CategoryHowToUse(models.Model):
     photo = models.ImageField(upload_to='media/product-how-to-use')
 
     def __str__(self):
-        return self.step_number
+        return str(self.step_number)
