@@ -62,7 +62,9 @@ ROOT_URLCONF = "robinsonbd.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [BASE_DIR / 'templates']
+        "DIRS": [BASE_DIR / 'templates',
+                 'products/templates',
+                 ]
         ,
         "APP_DIRS": True,
         "OPTIONS": {

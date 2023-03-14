@@ -1,0 +1,38 @@
+{% extends 'base2.html' %}
+{% load static %}
+{% block content %}
+    <!-- ======= Hero Section ======= -->
+
+    <div class="container">
+
+        <!-- ======= Services Section ======= -->
+        <section id="services" class="services section-bg">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>ALL Products</h2>
+                    <p>Click to view details</p>
+                </div>
+
+                <div class="row">
+                    {% for product in products %}
+                        <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+                            <div class="icon-box">
+                                                        <a href="{% url 'view-product' product.id %}">
+
+{#                                <div class="icon"><i class="bx bxl-dribbble"></i></div>#}
+                                <img src="{{ product.photo.url }}" class="card-img-top">
+                                <h4><a href="">{{ product.name }}</a></h4>
+                                <p>Usage: {{ product.use_case }}</p>
+                                                        </a>
+                            </div>
+
+                        </div>
+                    {% endfor %}
+                </div>
+
+            </div>
+        </section><!-- End Services Section -->
+
+    </div>
+{% endblock %}
