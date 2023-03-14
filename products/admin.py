@@ -3,5 +3,6 @@ from .models import *
 # Register your models here.
 admin.site.register(Category)
 admin.site.register(Product)
-admin.site.register(ProductCertification)
-admin.site.register(ProductHowToUse)
+admin.site.register(CategoryCertification)
+admin.site.register(CategoryHowToUse)
+admin.site.register(CategoryFeatures)
