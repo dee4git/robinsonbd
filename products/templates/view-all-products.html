@@ -18,13 +18,13 @@
                     {% for product in products %}
                         <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
                             <div class="icon-box">
-                                                        <a href="{% url 'view-product' product.id %}">
+                                <a href="{% url 'view-product' product.id %}">
 
-{#                                <div class="icon"><i class="bx bxl-dribbble"></i></div>#}
-                                <img src="{{ product.photo.url }}" class="card-img-top">
-                                <h4><a href="">{{ product.name }}</a></h4>
-                                <p>Usage: {{ product.use_case }}</p>
-                                                        </a>
+                                    {#                                <div class="icon"><i class="bx bxl-dribbble"></i></div>#}
+                                    <img src="{{ product.photo.url }}" class="card-img-top">
+                                    <h4><a href="{% url 'view-product' product.id %}">{{ product.name }}</a></h4>
+                                    <p>Usage: {{ product.use_case }}</p>
+                                </a>
                             </div>
 
                         </div>
