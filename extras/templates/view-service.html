@@ -1,0 +1,32 @@
+{% extends 'base2.html' %}
+{% load static %}
+{% block content %}
+    <!-- ======= Hero Section ======= -->
+
+    <div class="container">
+        <section id="products" class="why-us section-bg">
+            <div class="container-fluid" data-aos="fade-up" >
+                <div class="section-title">
+                    <h2>{{ service.name }}</h2>
+                </div>
+
+                <style>
+                    .full-width-image {
+                        width: 100%;
+                    }
+                </style>
+                </head>
+                <div class="container">
+                <div class="container">
+                <div class="container">
+                <img class="full-width-image" src="{{ service.photo.url }}" alt="Your Image">
+                    </div>
+                    </div>
+                    </div>
+                <br>
+                <br>
+                <p style="  text-align: justify;font-size: 20px">{{ service.description }}</p>
+            </div>
+        </section>
+    </div>
+{% endblock %}

@@ -14,10 +14,11 @@ def view_product(request, pk):
     product = Product.objects.get(pk=pk)
     certificates = CategoryCertification.objects.filter(category=product.category)
     features = CategoryFeatures.objects.filter(category=product.category)
-    print(features)
+    how_to_use = CategoryHowToUse.objects.filter(category=product.category)
 
     return render(request, 'view-product.html', {
         "product": product,
         "certificates": certificates,
         "features": features,
+        "how_to_use": how_to_use,
     })
