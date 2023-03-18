@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-from django.urls import path, include
+from django.template.defaulttags import url
+from django.urls import path, include, re_path
+from django.views.static import serve
+
 from . import views
 from django.conf import settings
 from django.conf.urls.static import static
@@ -25,8 +28,11 @@ urlpatterns = [
     path("", views.home, name='home'),
     path('products/', include('products.urls')),
     path('extras/', include('extras.urls')),
+    # This line takes care of media files when debug = False
+    re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
 
 ]
+
 # needed to upload and use static files
 urlpatterns = urlpatterns + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns = urlpatterns + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

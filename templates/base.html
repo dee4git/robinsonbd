@@ -40,7 +40,7 @@
 <body>
 
 <!-- ======= Header ======= -->
-<header id="header" class="fixed-top ">
+<header id="header" class="fixed-top" style="background: #37517E">
     <div class="container d-flex align-items-center">
 
         <h1 class="logo me-auto"><a href="{% url 'home' %}">Robinsonbd.com</a></h1>
@@ -50,13 +50,14 @@
         <nav id="navbar" class="navbar">
             <ul>
                 <li><a class="nav-link scrollto active" href="{% url 'home' %}">Home</a></li>
-                <li><a class="nav-link scrollto" href="#products">Product</a></li>
+                <li><a class="nav-link scrollto" href="{% url 'home' %}#products">Categories</a></li>
+                <li><a class="nav-link scrollto" href="{% url 'view-all-products' %}">Product</a></li>
                 {#                <li><a class="nav-link scrollto" href="#services">Services</a></li>#}
-                <li><a class="nav-link scrollto" href="#Service">Service</a></li>
-                <li><a class="nav-link scrollto" href="#Application">Applicaiton</a></li>
-                <li><a class="nav-link scrollto" href="#team">Team</a></li>
-                <li><a class="nav-link scrollto" href="#about">About</a></li>
-                <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+                <li><a class="nav-link scrollto" href="{% url 'home' %}#Service">Service</a></li>
+                <li><a class="nav-link scrollto" href="{% url 'home' %}#Application">Applicaiton</a></li>
+                <li><a class="nav-link scrollto" href="{% url 'home' %}#team">Team</a></li>
+                <li><a class="nav-link scrollto" href="{% url 'home' %}#about">About</a></li>
+                <li><a class="nav-link scrollto" href="{% url 'home' %}#contact">Contact</a></li>
                 <li><a class="getstarted scrollto" href="/admin">Admin Login</a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
