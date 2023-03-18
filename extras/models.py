@@ -13,7 +13,7 @@ class Service(models.Model):
 
 
 class Application(models.Model):
-    name = models.CharField(max_length=500, default='service name')
+    name = models.CharField(max_length=501, default='service name')
     # serial_number = models.AutoField(primary_key=True)
     description = models.TextField(max_length=10000, default='description')
     photo = models.ImageField(default='img.png', upload_to='media/services')
