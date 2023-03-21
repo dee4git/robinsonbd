@@ -4,7 +4,7 @@ from .models import Product, CategoryCertification, CategoryFeatures, CategoryHo
 
 # Create your views here.
 def view_all_products(request):
-    products = Product.objects.all()
+    products = Product.objects.order_by('serial_number')
     return render(request, 'view-all-products.html', {
         "products": products
     })

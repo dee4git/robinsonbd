@@ -3,9 +3,9 @@
 {% block content %}
     <!-- ======= Hero Section ======= -->
     <br>
-<br>
-<br>
-<title>Product Details</title>
+    <br>
+    <br>
+    <title>Product Details</title>
     <div class="container">
         <section id="products" class="why-us section-bg">
             <div class="container-fluid" data-aos="fade-up">
@@ -49,28 +49,28 @@
                     </div>
                     <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img" style='background-image: url("{{ product.photo.url }}");' data-aos="zoom-in" data-aos-delay="150">&nbsp;</div>
                 </div>
-
+                {{ product.description |safe }}
             </div>
         </section>
-    </section><!-- certifications -->
+        </section><!-- certifications -->
+{#        <section id="clients" class="clients section-bg">#}
+{#            <div class="container">#}
+{#                <div class="section-title">#}
+{#                    <h2>How to use?</h2>#}
+{#                </div>#}
+{#                <div class="row" data-aos="zoom-in" style="justify-content: center;">#}
+{#                    {% for i in how_to_use %}#}
+{#                        <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center" style="display: flex!important;   align-content: center; flex-wrap: wrap; flex-direction: column;}">#}
+{#                            <img src = "{{ i.photo.url }}" class="img-fluid" alt="">#}
+{#                        </div>#}
+{#                    {% endfor %}#}
+{#                </div>#}
+{#            </div>#}
+{#        </section><!-- End Clients Section -->#}
         <section id="clients" class="clients section-bg">
             <div class="container">
                 <div class="section-title">
-                    <h2>How to use?</h2>
-                </div>
-                <div class="row" data-aos="zoom-in" style="justify-content: center;">
-                    {% for i in how_to_use %}
-                        <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center" style="display: flex!important;   align-content: center; flex-wrap: wrap; flex-direction: column;}">
-                            <img src = "{{ i.photo.url }}" class="img-fluid" alt="">
-                        </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </section><!-- End Clients Section -->
-        <section id="clients" class="clients section-bg">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Features</h2>
+                    <h2>Advantages</h2>
                 </div>
                 <div class="row" data-aos="zoom-in" style="justify-content: center;">
                     {% for feature in features %}

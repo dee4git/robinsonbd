@@ -4,5 +4,5 @@ from .models import *
 admin.site.register(Category)
 admin.site.register(Product)
 admin.site.register(CategoryCertification)
-admin.site.register(CategoryHowToUse)
+# admin.site.register(CategoryHowToUse)
 admin.site.register(CategoryFeatures)

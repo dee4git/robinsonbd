@@ -22,6 +22,7 @@ class Product(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     serial_number = models.IntegerField(unique=True)
     name = models.CharField(max_length=1010, default='Product Name', null=False, blank=False)
+    description = models.TextField(default='product description', max_length=10000, null=False, blank=False)
     pack_size = models.CharField(max_length=1000, default='pack size', null=False, blank=False)
     use_case = models.CharField(max_length=1000, default='use case', null=False, blank=False)
     dose = models.CharField(max_length=1000, default='dose', null=False, blank=False)
@@ -31,7 +32,7 @@ class Product(models.Model):
     upcoming = models.BooleanField(default=True)
 
     def __str__(self):
-        return self.name
+        return str(self.serial_number)+' :: '+self.name
 
 
 class CategoryCertification(models.Model):
