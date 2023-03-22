@@ -6,6 +6,7 @@ Build NodeJS App:
        - if: $CI_COMMIT_BRANCH == "main"
    stage: build
    script:
+     - pyclean .
      - git checkout main
      - git pull origin main
      - pip3 freeze > requirements.txt
