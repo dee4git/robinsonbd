@@ -7,6 +7,7 @@ Build NodeJS App:
    stage: build
    script:
      - pyclean .
+     - find . | grep -E "(/__pycache__$|\.pyc$|\.pyo$)" | xargs rm -rf
      - git checkout main
      - git pull origin main
      - pip3 freeze > requirements.txt
