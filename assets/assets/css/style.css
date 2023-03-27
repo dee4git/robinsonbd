@@ -1,4 +1,4 @@
-/**
+/** this is the one
 * Template Name: Arsha - v4.11.0
 * Template URL: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/
 * Author: BootstrapMade.com
@@ -404,16 +404,15 @@ h6 {
 }
 
 #hero h1 {
-  margin: 0 0 10px 0;
-  font-size: 48px;
-  font-weight: 700;
-  line-height: 56px;
-  color: #fff;
+    margin: 0 0 10px 63px;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 56px;
+    color: #ff4848;
 }
-
 #hero h2 {
   color: rgba(255, 255, 255, 0.6);
-  margin-bottom: 50px;
+  margin: 0 0 50px 60px;
   font-size: 24px;
 }
 

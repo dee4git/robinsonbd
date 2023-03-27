@@ -5,7 +5,7 @@
     <br>
     <br>
     <br>
-    <title>Product Details</title>
+    <title>Product Details - {{ product.name }}</title>
     <div class="container">
         <section id="products" class="why-us section-bg">
             <div class="container-fluid" data-aos="fade-up">
@@ -31,7 +31,7 @@
                                 </li>
 
                                 <li>
-                                    <a data-bs-toggle="collapse" data-bs-target="#accordion-list-2" class="collapsed"><span>02</span> What is the dose size? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                                    <a data-bs-toggle="collapse" data-bs-target="#accordion-list-2" class="collapsed"><span>02</span> What is the dose quantity? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                                     <div id="accordion-list-2" class="collapse" data-bs-parent=".accordion-list">
                                         <p>{{ product.dose }}</p>
                                     </div>

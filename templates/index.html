@@ -1,25 +1,118 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+    <title>Robinsonbd.com - Home</title>
+    <body>
+
     <!-- ======= Hero Section ======= -->
     <section id="hero" class="d-flex align-items-center">
+        <style>
+            * {box-sizing: border-box}
+            .mySlides1, .mySlides2 {display: none}
+            img {vertical-align: middle;}
 
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
-                    <h1>One-Stop Solution For Concrete Admixtures</h1>
-                    <h2>"From foundation to finish, our concrete admixtures are the solution you need for strength, durability, and performance."</h2>
-                    <div class="d-flex justify-content-center justify-content-lg-start">
-                        <a href="#about" class="btn-get-started scrollto">About Us</a>
-                        <a href="https://youtu.be/hsoy7bNfs0I" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
+            /* Slideshow container */
+            .slideshow-container {
+                max-width: 100%;
+                position: relative;
+                margin: auto;
+            }
+
+            /* Next & previous buttons */
+            .prev, .next {
+                background: #37517e;
+                cursor: pointer;
+                position: absolute;
+                top: 40%;
+                width: auto;
+                padding: 16px;
+                margin-top: -22px;
+                color: white;
+                font-weight: bold;
+                font-size: 18px;
+                transition: 0.6s ease;
+                border-radius: 0 3px 3px 0;
+                user-select: none;
+            }
+            @media (max-width: 991px) {
+                .prev, .next {
+                    position: relative;
+                    top: 33px;
+                }
+            }
+            /* Position the "next button" to the right */
+            .next {
+                right: 0;
+                border-radius: 3px 0 0 3px;
+            }
+
+            /* On hover, add a grey background color */
+            .prev:hover, .next:hover {
+                background-color: #f1f1f1;
+                color: black;
+            }
+        </style>
+
+
+        <div class="slideshow-container">
+            <div class="mySlides1">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+                            <h1 style="margin-left: 40px;margin-right: 40px">One-Stop Solution For Concrete Admixture & Damp Proof Water <Sealer></Sealer></h1>
+                            <h2 style="margin-left: 40px; margin-right: 40px">"From foundation to finish, our concrete admixtures are the solution you need for strength, durability, and performance."</h2>
+                            <div class="d-flex justify-content-center justify-content-lg-start">
+                                <a href="#about" class="btn-get-started scrollto">About Us</a>
+                                <a href="https://youtu.be/hsoy7bNfs0I" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
+                            <img src="{% static 'assets/img/robinsonbd-logo.png' %}" class="img-fluid animated" alt="">
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
-                    <img src="{% static 'assets/img/robinsonbd-logo.png' %}" class="img-fluid animated" alt="">
-                </div>
             </div>
+            <div class="mySlides1">
+                <img src="{% static 'assets/img/2.png' %}" style="width:100%">
+            </div>
+
+            <div class="mySlides1">
+                <img src="{% static 'assets/img/1.png' %}" style="width:100%">
+            </div>
+
+
+
+            <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
         </div>
 
+        <script>
+            window.setInterval(function() {
+                console.log("called");
+                plusSlides(1, 0);
+                plusSlides(1, 1);
+            }, 3000  ); // Change slides every 3 seconds
+            let slideIndex = [1,1];
+            let slideId = ["mySlides1", "mySlides2"]
+            showSlides(1, 0);
+            showSlides(1, 1);
+            showSlides(1, 2);
+
+            function plusSlides(n, no) {
+                showSlides(slideIndex[no] += n, no);
+            }
+
+            function showSlides(n, no) {
+                let i;
+                let x = document.getElementsByClassName(slideId[no]);
+                if (n > x.length) {slideIndex[no] = 1}
+                if (n < 1) {slideIndex[no] = x.length}
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                }
+                x[slideIndex[no]-1].style.display = "block";
+            }
+        </script>
     </section><!-- End Hero -->
 
     <main id="main">
