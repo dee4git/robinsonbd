@@ -32,7 +32,7 @@ class Product(models.Model):
     upcoming = models.BooleanField(default=True)
 
     def __str__(self):
-        return str(self.serial_number)+' :: '+self.name
+        return str(self.serial_number) + ' :: ' + self.name
 
 
 class CategoryCertification(models.Model):
@@ -61,3 +61,11 @@ class CategoryHowToUse(models.Model):
 
     def __str__(self):
         return str(self.step_number) + ' :: ' + str(self.category)
+
+
+class Banner(models.Model):
+    serial_number = models.IntegerField(unique=True)
+    photo = models.ImageField(upload_to='media/banner')
+
+    def __str__(self):
+        return str(self.serial_number)

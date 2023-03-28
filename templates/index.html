@@ -72,13 +72,12 @@
                     </div>
                 </div>
             </div>
+            {% for banner in banners %}
             <div class="mySlides1">
-                <img src="{% static 'assets/img/2.png' %}" style="width:100%">
+                <img src="{{ banner.photo.url }}" style="width:100%">
             </div>
+            {% endfor %}
 
-            <div class="mySlides1">
-                <img src="{% static 'assets/img/1.png' %}" style="width:100%">
-            </div>
 
 
 

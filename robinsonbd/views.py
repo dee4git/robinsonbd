@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 from extras.models import Stuff, Application, Service, QnA
-from products.models import Category, CategoryFeatures, CategoryCertification
+from products.models import Category, CategoryFeatures, CategoryCertification, Banner
 
 
 def home(request):
@@ -12,6 +12,7 @@ def home(request):
     services = Service.objects.all()
     faqs = QnA.objects.all()
     stuffs = Stuff.objects.order_by('serial_number')
+    banners = Banner.objects.order_by('serial_number')
 
     # making a pair of all the information related to a category
     for category in categories:
@@ -24,4 +25,5 @@ def home(request):
         "applications": applications,
         "services": services,
         "faqs": faqs,
+        "banners": banners,
     })
