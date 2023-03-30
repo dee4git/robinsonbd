@@ -34,10 +34,18 @@
                 border-radius: 0 3px 3px 0;
                 user-select: none;
             }
+            @media only screen and (min-width: 992px) {
+                .only {
+                    display: none;
+                }
+            }
             @media (max-width: 991px) {
                 .prev, .next {
                     position: relative;
                     top: 33px;
+                }
+                h1 {
+                    font-size: 20px;
                 }
 
                 .only {
@@ -68,7 +76,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
-                            <h1 style="margin-left: 40px;margin-right: 40px">One-Stop Solution For Concrete Admixture & Damp Proof Water Sealer <Sealer></Sealer></h1>
+                            <h1 style="margin-left: 40px;margin-right: 40px; font-size: 35px;">One-Stop Solution For Concrete Admixture & Damp Proof Water Sealer <Sealer></Sealer></h1>
                             <h2 style="margin-left: 40px; margin-right: 40px">"From foundation to finish, our concrete admixtures are the solution you need for strength, durability, and performance."</h2>
                             <div class="d-flex justify-content-center justify-content-lg-start">
                                 <a href="#about" class="btn-get-started scrollto">About Us</a>
@@ -87,7 +95,7 @@
                         <img src="{{ banner.photo.url }}" style="display: block;margin-left: auto;margin-right: auto; width: 80%;"> </div>
                     <div class="only">
                         <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
-                            <h1 style="margin-left: 40px;margin-right: 40px">One-Stop Solution For Concrete Admixture & Damp Proof Water Sealer<Sealer></Sealer></h1>
+                            <h1 style="margin-left: 40px;margin-right: 40px; font-size: 35px;">One-Stop Solution For Concrete Admixture & Damp Proof Water Sealer <Sealer></Sealer></h1>
                             <h2 style="margin-left: 40px; margin-right: 40px">"From foundation to finish, our concrete admixtures are the solution you need for strength, durability, and performance."</h2>
                             <div class="d-flex justify-content-center justify-content-lg-start">
                                 <a href="#about" class="btn-get-started scrollto">About Us</a>
@@ -100,8 +108,8 @@
 
 
 
-{#                        <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>#}
-{#                        <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>#}
+            {#                        <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>#}
+            {#                        <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>#}
         </div>
 
 
